@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Post new event to DB</h2>
+    <br>
+    <form action="" method="post">
+        {{ form.csrf_token() }}
+        <div class="form-field">
+            {{ form.first_name.label }}
+            {{ form.first_name }}
+            {% for error in form.first_name.errors %}
+                {{ error }}
+            {% endfor %}
+            <br>
+            <br>
+            {{ form.second_name.label }}
+            {{ form.second_name }}
+            {% for error in form.second_name.errors %}
+                {{ error }}
+            {% endfor %}
+        </div>
+        <br>
+        {{ form.submit }}
+    </form>
+{% endblock %}

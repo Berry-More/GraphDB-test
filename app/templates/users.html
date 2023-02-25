@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>First 50 registered users</h1>
+    {% for i in all_users %}
+        <a href="{{ '/users' + '/' + i['name'] }}">{{ i['name'] }}</a>
+    <br>
+    {% endfor %}
+    <hr>
+{% endblock %}
